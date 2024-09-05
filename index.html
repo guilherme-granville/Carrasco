@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Cadastro de Produtos</h2>
+    <form>
+        
+        <label for="nome_produto">Nome do Produto:</label>
+        <input type="text" id="nome_produto" name="nome_produto" placeholder="Digite o nome do produto" required>
+
+        <label for="categoria">Categoria:</label>
+        <input type="text" id="categoria" name="categoria" placeholder="Digite a categoria" required>
+
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" id="preco" name="preco" placeholder="Digite o preço" required>
+
+        <label for="quantidade_estoque">Quantidade em Estoque:</label>
+        <input type="number" id="quantidade_estoque" name="quantidade_estoque" placeholder="Digite a quantidade em estoque" required>
+
+        <label for="codigo_produto">Código do Produto:</label>
+        <input type="text" id="codigo_produto" name="codigo_produto" placeholder="Digite o código do produto" required>
+
+        <label for="fornecedor">Fornecedor:</label>
+        <input type="text" id="fornecedor" name="fornecedor" placeholder="Digite o fornecedor">
+
+        <label for="data_validade">Data de Validade:</label>
+        <input type="date" id="data_validade" name="data_validade">
+
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+</div>
+<script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                console.log('Serviço Iniciado - Service Start', registration.scope);
+            }).catch(error => {
+                console.log('Falha na inicialização do serviço - Service Fail'), error
+            });
+        }
+</script>
+
+</body>
+</html>
